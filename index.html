@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Googl Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind css -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Portfolio - teamRED</title>
+  </head>
+  <body
+    class="bg-gradient-to-b from-indigo-200 via-indigo-400 to-indigo-500 bg-no-repeat text-sm md:text-base xl:text-lg text-gray-900 font-[Poppins] font-normal relative"
+  >
+    <!-- Navbar Area -->
+    <nav class="bg-amber-100 py-1 sticky top-0 text-lg shadow-md z-10">
+      <div class="container px-4 mx-auto flex justify-between items-center">
+        <!-- Logo Area -->
+        <a
+          href="index.html"
+          class="inline-block text-xl md:text-2xl lg:text-3xl font-semibold font-[Lobster]"
+          ><span class="text-red-500">team</span>RED
+        </a>
+
+        <!-- Mobile Button -->
+        <button
+          onclick="toggleNav(true)"
+          type="button"
+          aria-label="Hamburger-Button"
+          class="text-black cursor-pointer w-[40px] h-[40px] hover:bg-gray-100 transition-colors rounded-full md:hidden"
+        >
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+
+        <!-- Navbar List -->
+        <ul class="md:flex items-center space-x-4 hidden">
+          <li>
+            <a
+              href="#banner"
+              class="inline-block hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="inline-block hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#quiz-area"
+              class="hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
+              >Quiz</a
+            >
+          </li>
+          <li>
+            <a
+              href="#password-generator"
+              class="hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
+              >Generator</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="inline-block hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile Navbar -->
+    <nav
+      id="mobile-menu"
+      class="flex md:hidden flex-col items-start bg-gray-700 text-stone-200 py-5 text-lg w-[250px] h-full fixed z-20 top-0 right-0 shadow-md shadow-stone-400 scale-x-0 origin-right opacity-0 invisible duration-300"
+    >
+      <button
+        onclick="toggleNav(false)"
+        aria-label="cancel-hamburger-menu"
+        type="button"
+        class="mr-auto cursor-pointer hover:bg-gray-500 transition-colors rounded-full ml-5 mb-5"
+      >
+        <i
+          class="fa-solid fa-xmark text-2xl w-[40px] h-[40px] !flex justify-center items-center"
+        ></i>
+      </button>
+      <a
+        href="#banner"
+        class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-y border-gray-600"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-b border-gray-600"
+        >About Us</a
+      >
+      <a
+        href="#quiz-area"
+        class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-b border-gray-600"
+        >Quiz</a
+      >
+      <a
+        href="#password-generator"
+        class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-b border-gray-600"
+        >Generator</a
+      >
+      <a
+        href="#contact"
+        class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-b border-gray-600"
+        >Contact Us</a
+      >
+    </nav>
+
+    <section id="banner" class="py-3 w-full h-screen">
+      <div
+        class="container h-full mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-5"
+      >
+        <div class="md:w-1/2">
+          <img src="assets/img/banner.svg" alt="" class="max-h-full" />
+        </div>
+        <div class="md:w-1/2 text-center md:text-left text-white">
+          <h1
+            class="text-2xl text-center md:text-left md:text-4xl xl:text-6xl font-bold font-[Raleway] mb-5"
+          >
+            Welcome to Our
+            <span class="text-red-300">Creative Collective</span>
+            <span
+              class="block text-base md:text-xl xl:text-3xl font-semibold text-[#ffffffd4] w-full"
+            >
+              — where ideas spark, passions unite, and innovation takes
+              flight.</span
+            >
+          </h1>
+          <p class="md:text-base xl:text-xl text-[#b0c9ef]">
+            Together, we imagine beyond limits and create without compromise.
+          </p>
+          <a
+            href="#main-content"
+            class="bg-indigo-400 px-6 md:px-8 py-3 rounded-md hover:bg-indigo-600 transition-all cursor-pointer mt-4 md:mt-7 shadow-md font-semibold inline-block"
+          >
+            Explore More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Conduct Area -->
+      <section id="conduct" class="py-12 bg-[#5375d242]">
+        <div class="container mx-auto px-4 py-2">
+          <div class="heading py-2 my-3">
+            <h2
+              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
+            >
+              Code of Conduct
+            </h2>
+          </div>
+          <div class="flex flex-wrap justify-evenly items-stretch gap-4 p-2">
+            <div
+              class="conduct-item p-4 rounded-md border-indigo-200 border w-full md:w-[345px] shadow-sm shadow-sky-300 bg-indigo-400"
+            >
+              <h3 class="text-base md:text-xl font-semibold mb-3">
+                Ethics and Professionalism
+              </h3>
+              <p class="text-justify opacity-90">
+                Use this space to talk about the policies, rules, regulations,
+                and other finer details that employees need to know about your
+                company. These can include areas like attendance, paid time off,
+                benefits, uniforms, and other similar policy areas. Use this
+                space to talk about the policies, rules, regulations, and other
+                finer details that employees need to know about your company.
+              </p>
+            </div>
+            <div
+              class="conduct-item p-4 rounded-md border-indigo-200 border w-full md:w-[345px] shadow-sm shadow-sky-300 bg-indigo-400"
+            >
+              <h3 class="text-base md:text-xl font-semibold mb-3">
+                Confidentiality
+              </h3>
+              <p class="text-justify opacity-90">
+                Use this space to talk about the policies, rules, regulations,
+                and other finer details that employees need to know about your
+                company. These can include areas like attendance, paid time off,
+                benefits, uniforms, and other similar policy areas. Use this
+                space to talk about the policies, rules, regulations, and other
+                finer details that employees need to know about your company.
+              </p>
+            </div>
+            <div
+              class="conduct-item p-4 rounded-md border-indigo-200 border w-full md:w-[345px] shadow-sm shadow-sky-300 bg-indigo-400"
+            >
+              <h3 class="text-base md:text-xl font-semibold mb-3">
+                Safety and Security
+              </h3>
+              <p class="text-justify opacity-90">
+                Use this space to talk about the policies, rules, regulations,
+                and other finer details that employees need to know about your
+                company. These can include areas like attendance, paid time off,
+                benefits, uniforms, and other similar policy areas. Use this
+                space to talk about the policies, rules, regulations, and other
+                finer details that employees need to know about your company.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quiz Area -->
+      <section id="quiz-area" class="py-12">
+        <div class="container mx-auto px-4">
+          <!-- Quiz Heading Area -->
+          <div class="heading py-2 my-3">
+            <h2
+              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
+            >
+              Test Your Knowledge!
+            </h2>
+            <p class="text-center mt-3 text-white opacity-70 font-normal">
+              Adds a sense of excitement
+            </p>
+          </div>
+
+          <!-- Quiz Content Area -->
+          <div
+            class="flex flex-col-reverse md:flex-row justify-center items-center md:items-stretch md:space-x-3"
+          >
+            <!-- Quiz Left Area -->
+            <div
+              class="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 flex justify-center items-center"
+            >
+              <!-- Start Screen -->
+              <div id="start-screen" class="block text-center w-full">
+                <h1
+                  class="text-xl md:text-2xl font-semibold mb-4 font-[Raleway]"
+                >
+                  Ready to flex those brain cells?
+                </h1>
+                <button
+                  type="button"
+                  onclick="startQuiz()"
+                  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition cursor-pointer"
+                >
+                  Jump In
+                </button>
+              </div>
+
+              <!-- Quiz Content -->
+              <div id="quiz" class="hidden w-full">
+                <h2
+                  id="question"
+                  class="text-lg font-medium mb-4 text-center font-[Raleway]"
+                ></h2>
+                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                  <div id="question-count">Question 1 of X</div>
+                  <div id="score-indicator">Score: 0</div>
+                </div>
+                <div id="choices" class="flex flex-col gap-2 mb-4"></div>
+
+                <!-- Progress Bar + Inline Score -->
+                <div class="w-full bg-gray-200 h-2 rounded mt-4">
+                  <div
+                    id="progress-bar"
+                    class="bg-blue-500 h-2 rounded transition-all duration-300"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Restart Screen -->
+              <div id="restart-screen" class="hidden text-center w-full">
+                <button
+                  type="button"
+                  onclick="restartQuiz()"
+                  class="bg-green-500 text-white px-4 py-2 mt-4 rounded hover:bg-green-600 transition cursor-pointer"
+                >
+                  Restart Quiz
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz Right Area -->
+            <div class="md:w-1/2">
+              <img src="assets/img/quiz.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Password Generator Area -->
+      <section id="password-generator" class="py-12 bg-gray-800">
+        <div class="container mx-auto px-4">
+          <!-- Quiz Heading Area -->
+          <div class="heading py-2 my-3">
+            <h2
+              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
+            >
+              Secure Your Access
+            </h2>
+            <p class="text-center mt-3 text-white opacity-70 font-normal">
+              Fortify your privacy in seconds
+            </p>
+          </div>
+
+          <!-- Bottom Area -->
+          <div
+            class="flex flex-col md:flex-row justify-center items-center md:space-x-4"
+          >
+            <!-- Left Side -->
+            <div class="md:w-1/2 w-full">
+              <img
+                class="max-w-full mx-auto"
+                src="assets/img/generator.svg"
+                alt=""
+              />
+            </div>
+
+            <!-- Right Side -->
+            <div
+              class="text-white md:w-1/2 w-full bg-indigo-500 p-5 rounded-md md"
+            >
+              <h1 class="text-center text-lg md:text-xl mb-3">
+                Password Generator
+              </h1>
+              <div
+                class="in_out flex space-x-3 justify-center items-center mb-3 w-full"
+              >
+                <input
+                  id="input-len"
+                  class="outline-0 border border-indigo-300 text-sm py-2 px-3 text-center w-1/4"
+                  min="8"
+                  max="32"
+                  type="number"
+                  placeholder="Length"
+                  required
+                />
+                <input
+                  id="output-pass"
+                  class="outline-0 border border-indigo-300 py-2 px-3 text-center text-sm w-3/4"
+                  type="text"
+                  placeholder="Generated Password"
+                  readonly
+                />
+              </div>
+              <button
+                type="button"
+                onclick="passBtn()"
+                class="w-fit block mx-auto py-2 px-8 bg-blue-700 hover:bg-blue-600 transition-colors rounded-md cursor-pointer"
+              >
+                Generate
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Area -->
+      <section id="about" class="py-12">
+        <div
+          class="container mx-auto px-4 h-full flex justify-center items-center flex-col"
+        >
+          <div class="heading py-2 my-3">
+            <h2
+              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
+            >
+              Who We Are
+            </h2>
+            <p class="text-center mt-3 text-white opacity-70 font-normal">
+              At teamRED, we’re more than creators—we’re collaborators,
+              visionaries, and problem-solvers.
+            </p>
+          </div>
+          <div class="flex justify-center items-center w-full">
+            <div class="swiper mySwiper w-60 md:w-full h-80">
+              <div
+                class="swiper-wrapper rounded-md md:gap-[7px] lg:gap-[9px] xl:gap-[11px]"
+              >
+                <div
+                  class="swiper-slide flex justify-center items-center rounded-md !w-60"
+                >
+                  <div
+                    class="bg-[url(../assets/img/rakibul-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
+                  >
+                    <div
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full left-0 -bottom-32 opacity-0 duration-300 transition-all text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                    >
+                      <h3 class="text-lg font-[Raleway] font-semibold">
+                        Md. Rakibul Islam
+                      </h3>
+                      <span class="text-xs">Frontend Developer</span>
+                      <div
+                        class="flex justify-center items-center gap-3 mt-3 text-sm"
+                      >
+                        <a
+                          href="https://www.facebook.com/programmerrakibul"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-[#1877F2] bg-white transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-facebook-f text-[#1877F2] hover:text-white transition-colors w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="https://github.com/programmerrakibul"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-black transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-github text-white hover:text-black transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/in/md-rakibul-islam-9399b3228/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-[#0077B5] transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-linkedin-in text-white hover:text-[#0077B5] transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide flex justify-center items-center rounded-md !w-60"
+                >
+                  <div
+                    class="bg-[url(../assets/img/rokib-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
+                  >
+                    <div
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full left-0 -bottom-32 opacity-0 duration-300 transition-all text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                    >
+                      <h3 class="text-lg font-[Raleway] font-semibold">
+                        Nafiul Islam Rokib
+                      </h3>
+                      <span class="text-xs">Frontend Developer</span>
+                      <div
+                        class="flex justify-center items-center gap-3 mt-3 text-sm"
+                      >
+                        <a
+                          href="https://www.facebook.com/nafiulrokib"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-[#1877F2] bg-white transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-facebook-f text-[#1877F2] hover:text-white transition-colors w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="https://github.com/NafiulRokib"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-black transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-github text-white hover:text-black transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-[#0077B5] transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-linkedin-in text-white hover:text-[#0077B5] transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide flex justify-center items-center rounded-md !w-60"
+                >
+                  <div
+                    class="bg-[url(../assets/img/maidul-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
+                  >
+                    <div
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 transition-all opacity-0 left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                    >
+                      <h3 class="text-lg font-[Raleway] font-semibold">
+                        Md. Maidul Islam
+                      </h3>
+                      <span class="text-xs">Frontend Developer</span>
+                      <div
+                        class="flex justify-center items-center gap-3 mt-3 text-sm"
+                      >
+                        <a
+                          href="https://www.facebook.com/programmerrakibul"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-[#1877F2] bg-white transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-facebook-f text-[#1877F2] hover:text-white transition-colors w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="https://github.com/programmerrakibul"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-black transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-github text-white hover:text-black transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/in/md-rakibul-islam-9399b3228/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-[#0077B5] transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-linkedin-in text-white hover:text-[#0077B5] transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide flex justify-center items-center rounded-md !w-60"
+                >
+                  <div
+                    class="bg-[url(../assets/img/nazmul-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
+                  >
+                    <div
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 -bottom-32 left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                    >
+                      <h3 class="text-lg font-[Raleway] font-semibold">
+                        Md. Nazmul Islam
+                      </h3>
+                      <span class="text-xs">Frontend Developer</span>
+                      <div
+                        class="flex justify-center items-center gap-3 mt-3 text-sm"
+                      >
+                        <a
+                          href="https://www.facebook.com/fsdnazmul"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-[#1877F2] bg-white transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-facebook-f text-[#1877F2] hover:text-white transition-colors w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-black transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-github text-white hover:text-black transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-[#0077B5] transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-linkedin-in text-white hover:text-[#0077B5] transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide flex justify-center items-center rounded-md !w-60"
+                >
+                  <div
+                    class="bg-[url(../assets/img/hamim-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
+                  >
+                    <div
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 transition-all -bottom-32 left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                    >
+                      <h3 class="text-lg font-[Raleway] font-semibold">
+                        Md. Habibur Rahman
+                      </h3>
+                      <span class="text-xs">Frontend Developer</span>
+                      <div
+                        class="flex justify-center items-center gap-3 mt-3 text-sm"
+                      >
+                        <a
+                          href="https://www.facebook.com/Hamim702H"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-[#1877F2] bg-white transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-facebook-f text-[#1877F2] hover:text-white transition-colors w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-black transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-github text-white hover:text-black transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-[#0077B5] transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-linkedin-in text-white hover:text-[#0077B5] transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide flex justify-center items-center rounded-md !w-60"
+                >
+                  <div
+                    class="bg-[url(../assets/img/sajjad-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
+                  >
+                    <div
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 transition-all -bottom-32 left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                    >
+                      <h3 class="text-lg font-[Raleway] font-semibold">
+                        Sajjad Ahamed Sojib
+                      </h3>
+                      <span class="text-xs">Frontend Developer</span>
+                      <div
+                        class="flex justify-center items-center gap-3 mt-3 text-sm"
+                      >
+                        <a
+                          href="https://www.facebook.com/Sajjad208"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-[#1877F2] bg-white transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-facebook-f text-[#1877F2] hover:text-white transition-colors w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-black transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-github text-white hover:text-black transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-[#0077B5] transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-linkedin-in text-white hover:text-[#0077B5] transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide flex justify-center items-center rounded-md !w-60"
+                >
+                  <div
+                    class="bg-[url(../assets/img/mahadi-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
+                  >
+                    <div
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 opacity-0 transition-all left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                    >
+                      <h3 class="text-lg font-[Raleway] font-semibold">
+                        Mahadi Hasan
+                      </h3>
+                      <span class="text-xs">Frontend Developer</span>
+                      <div
+                        class="flex justify-center items-center gap-3 mt-3 text-sm"
+                      >
+                        <a
+                          href="https://www.facebook.com/mahadihasanmithil05"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-[#1877F2] bg-white transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-facebook-f text-[#1877F2] hover:text-white transition-colors w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-black transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-github text-white hover:text-black transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-[#0077B5] transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-linkedin-in text-white hover:text-[#0077B5] transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide flex justify-center items-center rounded-md !w-60"
+                >
+                  <div
+                    class="bg-[url(../assets/img/mejba-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
+                  >
+                    <div
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 opacity-0 transition-all left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                    >
+                      <h3 class="text-lg font-[Raleway] font-semibold">
+                        Mejbaul Hauqe Mejba
+                      </h3>
+                      <span class="text-xs">Frontend Developer</span>
+                      <div
+                        class="flex justify-center items-center gap-3 mt-3 text-sm"
+                      >
+                        <a
+                          href="https://www.facebook.com/mahadihasanmithil05"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-[#1877F2] bg-white transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-facebook-f text-[#1877F2] hover:text-white transition-colors w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-black transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-github text-white hover:text-black transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Social Icon"
+                          class="hover:bg-white bg-[#0077B5] transition-all rounded-full"
+                        >
+                          <i
+                            class="fa-brands fa-linkedin-in text-white hover:text-[#0077B5] transition-color w-7 h-7 !flex justify-center items-center"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Area -->
+      <section id="contact" class="py-12 bg-purple-400">
+        <div
+          class="container mx-auto px-4 flex flex-col justify-center items-center w-full"
+        >
+          <div class="heading py-2 my-3 hidden sm:block">
+            <h2
+              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
+            >
+              Request Assistance
+            </h2>
+          </div>
+          <div
+            class="flex flex-col-reverse lg:flex-row justify-between items-center gap-5 my-7 w-full"
+          >
+            <div class="lg:w-1/2 w-full p-3">
+              <form
+                action=""
+                class="flex flex-col space-y-3 p-10 rounded-md bg-indigo-200"
+              >
+                <div class="py-2 text-center">
+                  <h3
+                    class="font-[Raleway] font-semibold text-lg md:text-xl md:placeholder:text-sm"
+                  >
+                    How Can We Reach You?
+                  </h3>
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <label for="email" class="text-base">Name</label>
+                  <input
+                    type="name"
+                    name="name"
+                    id="name"
+                    placeholder="What Should We Call You?"
+                    class="py-2 px-3 outline-0 border-stone-400 focus:border-indigo-400 border rounded-md placeholder:text-xs md:placeholder:text-sm"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <label for="email" class="text-base">Email</label>
+                  <input
+                    class="py-2 px-3 outline-0 border-stone-400 focus:border-indigo-400 border rounded-md placeholder:text-xs md:placeholder:text-sm"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Drop Your Email Here"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <label for="number" class="text-base">Number</label>
+                  <input
+                    class="py-2 px-3 outline-0 border-stone-400 focus:border-indigo-400 border rounded-md placeholder:text-xs md:placeholder:text-sm"
+                    type="number"
+                    name="number"
+                    id="number"
+                    placeholder="Type Your Number"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <label for="message" class="text-base">Message</label>
+                  <textarea
+                    class="py-2 px-3 outline-0 border-stone-400 focus:border-indigo-400 border rounded-md placeholder:text-xs md:placeholder:text-sm"
+                    name="message"
+                    id="message"
+                    placeholder="Drop a Line"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="cursor-pointer bg-blue-600 text-white hover:bg-blue-500 transition-all rounded-md p-2 font-semibold text-base"
+                  required
+                >
+                  Proceed
+                </button>
+              </form>
+            </div>
+            <div class="lg:w-1/2 hidden sm:block w-full">
+              <img
+                src="assets/img/contact.svg"
+                alt="Contact"
+                class="max-w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Area -->
+    <footer id="footer" class="py-4 bg-gray-700">
+      <div class="text-center">
+        <span class="text-stone-300"
+          >©All rights reserved by
+          <em class="cursor-default hover:underline">teamRED</em></span
+        >
+      </div>
+    </footer>
+
+    <!-- Swiper CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
