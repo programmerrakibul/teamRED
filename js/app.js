@@ -1,3 +1,21 @@
+// Dropdown Menu
+const projectChevron = document.querySelector("#project-chevron");
+const dropdownMenu = document.querySelector("#dropdown-menu");
+
+function showDropdown() {
+  projectChevron.classList.toggle("rotate-90");
+
+  let isHidden = dropdownMenu.classList.contains("opacity-0");
+
+  if (!isHidden) {
+    dropdownMenu.classList.add("top-20", "opacity-0", "invisible");
+    dropdownMenu.classList.remove("top-10", "opacity-100", "visible");
+  } else {
+    dropdownMenu.classList.add("top-10", "opacity-100", "visible");
+    dropdownMenu.classList.remove("top-20", "opacity-0", "invisible");
+  }
+}
+
 // Hamburger Menu
 // Navbar Toggle
 
@@ -136,8 +154,8 @@ function loadQuestion() {
     document.getElementById("restart-screen").insertAdjacentHTML(
       "afterbegin",
       `
-      <h2 class='text-xl md:text-2xl text-center mb-2 font-[Raleway] font-semibold'>🎉Assessment Completed!</h2>
-      <p class="text-center text-lg text-blue-600">Your Score: ${score}/${questions.length}</p>
+      <h2 class='text-xl md:text-2xl text-center mb-2 font-raleway font-semibold'>🎉Assessment Completed!</h2>
+      <p class="text-center text-lg text-polarWhite Your Score: ${score}/${questions.length}</p>
     `
     );
     return;
@@ -170,7 +188,7 @@ function loadQuestion() {
   q.choices.forEach((choice, i) => {
     const btn = document.createElement("button");
     btn.className =
-      "bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-all duration-200 cursor-pointer";
+      "bg-[#1d3557] px-4 py-2 rounded hover:bg-[#1d3557a6] transition-all duration-200 cursor-pointer";
     btn.textContent = choice;
     btn.onclick = () => selectAnswer(i, btn, q.answer);
     choicesDiv.appendChild(btn);
@@ -212,6 +230,7 @@ const numbers = "0123456789";
 
 const outputPass = document.querySelector("#output-pass");
 const inputPass = document.querySelector("#input-len");
+let dangerMessage = document.querySelector("#danger-message");
 
 function genPassword(length) {
   const chartSet = lowerCase + upperCase + symbols + numbers;
@@ -224,8 +243,11 @@ function genPassword(length) {
 }
 
 function passBtn() {
-  if (inputPass < 8) {
-    oupt;
+  if (inputPass.value < 8) {
+    dangerMessage.textContent = "Your password length must be greater than 7";
+  } else if (inputPass.value > 32) {
+    dangerMessage.textContent = "Your password length must be less than 33";
+  } else {
+    outputPass.value = genPassword(inputPass.value);
   }
-  outputPass.value = genPassword(inputPass.value);
 }

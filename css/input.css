@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@theme {
+  --color-blazeRed: #e63946;
+  --color-polarWhite: #f1faee;
+  --color-aquaMist: #a8dadc;
+  --color-blueAnchor: #457b9d;
+  --color-midnightNavy: #1d3557;
+  --font-lobster: Lobster;
+  --font-raleway: Raleway;
+  --font-poppins: Poppins;
+}
+
+@layer utilities {
+  .title-txt {
+    @apply text-xl md:text-3xl pb-2 font-semibold font-raleway border-b-3 border-polarWhite w-fit mx-auto text-aquaMist;
+  }
+
+  .sub-title-txt {
+    @apply text-center mt-3 text-polarWhite opacity-70 font-normal;
+  }
+
+  .conduct-item {
+    @apply p-4 hover:bg-gradient-to-bl hover:from-aquaMist from-5% to-blueAnchor text-midnightNavy transition-all  rounded-md border-polarWhite border w-full md:w-[345px] shadow-sm shadow-midnightNavy;
+  }
+
+  .quiz-btn {
+    @apply bg-midnightNavy border-2 border-midnightNavy text-aquaMist px-4 py-2 mt-3 rounded hover:bg-transparent transition cursor-pointer;
+  }
+}

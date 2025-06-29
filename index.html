@@ -30,16 +30,18 @@
     <title>Portfolio - teamRED</title>
   </head>
   <body
-    class="bg-gradient-to-b from-indigo-200 via-indigo-400 to-indigo-500 bg-no-repeat text-sm md:text-base xl:text-lg text-gray-900 font-[Poppins] font-normal relative"
+    class="bg-midnightNavy text-sm md:text-base xl:text-lg text-polarWhite font-poppins font-normal relative"
   >
     <!-- Navbar Area -->
-    <nav class="bg-amber-100 py-1 sticky top-0 text-lg shadow-md z-10">
+    <nav
+      class="bg-blueAnchor py-1 sticky top-0 text-lg shadow-sm shadow-aquaMist z-10"
+    >
       <div class="container px-4 mx-auto flex justify-between items-center">
         <!-- Logo Area -->
         <a
           href="index.html"
-          class="inline-block text-xl md:text-2xl lg:text-3xl font-semibold font-[Lobster]"
-          ><span class="text-red-500">team</span>RED
+          class="inline-block text-xl md:text-2xl lg:text-3xl font-semibold font-lobster"
+          ><span class="text-blazeRed">team</span>RED
         </a>
 
         <!-- Mobile Button -->
@@ -47,7 +49,7 @@
           onclick="toggleNav(true)"
           type="button"
           aria-label="Hamburger-Button"
-          class="text-black cursor-pointer w-[40px] h-[40px] hover:bg-gray-100 transition-colors rounded-full md:hidden"
+          class="text-midnightNavy cursor-pointer w-[40px] h-[40px] hover:bg-aquaMist transition-colors rounded-full md:hidden"
         >
           <i class="fa-solid fa-bars-staggered"></i>
         </button>
@@ -57,35 +59,53 @@
           <li>
             <a
               href="#banner"
-              class="inline-block hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
+              class="inline-block hover:text-aquaMist active:text-aquaMist transition-colors p-1"
               >Home</a
             >
           </li>
+          <li onclick="showDropdown()" class="relative">
+            <a
+              href="#project"
+              class="flex justify-center items-center hover:text-aquaMist active:text-aquaMist transition-colors p-1"
+            >
+              <span class="mr-[6px]">Projects</span>
+              <i
+                id="project-chevron"
+                class="fa-solid fa-chevron-right text-xs duration-300"
+              ></i>
+            </a>
+            <ul
+              id="dropdown-menu"
+              class="absolute left-0 top-20 invisible opacity-0 bg-blueAnchor z-10 border border-gray-400 min-w-48 rounded-b-md transition-all duration-300 ease-in-out"
+            >
+              <li class="border-b border-gray-600">
+                <a
+                  href="#quiz-area"
+                  class="inline-block hover:bg-midnightNavy active:text-aquaMist transition-colors px-2 py-3 w-full"
+                  >Assessment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#password-generator"
+                  class="inline-block hover:bg-midnightNavy active:text-aquaMist transition-colors px-2 py-3 w-full rounded-b-md"
+                  >Password Creator</a
+                >
+              </li>
+            </ul>
+          </li>
+
           <li>
             <a
               href="#about"
-              class="inline-block hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
+              class="inline-block hover:text-aquaMist active:text-aquaMist transition-colors p-1"
               >About Us</a
             >
           </li>
           <li>
             <a
-              href="#quiz-area"
-              class="hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
-              >Quiz</a
-            >
-          </li>
-          <li>
-            <a
-              href="#password-generator"
-              class="hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
-              >Generator</a
-            >
-          </li>
-          <li>
-            <a
               href="#contact"
-              class="inline-block hover:text-indigo-700 active:text-indigo-700 transition-colors p-1"
+              class="inline-block hover:text-aquaMist active:text-aquaMist transition-colors p-1"
               >Contact Us</a
             >
           </li>
@@ -96,7 +116,7 @@
     <!-- Mobile Navbar -->
     <nav
       id="mobile-menu"
-      class="flex md:hidden flex-col items-start bg-gray-700 text-stone-200 py-5 text-lg w-[250px] h-full fixed z-20 top-0 right-0 shadow-md shadow-stone-400 scale-x-0 origin-right opacity-0 invisible duration-300"
+      class="flex md:hidden flex-col items-start bg-midnightNavy py-5 text-lg w-48 sm:w-60 h-full fixed z-20 top-0 right-0 border-l border-blueAnchor scale-x-0 origin-right opacity-0 invisible duration-300"
     >
       <button
         onclick="toggleNav(false)"
@@ -114,19 +134,19 @@
         >Home</a
       >
       <a
-        href="#about"
-        class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-b border-gray-600"
-        >About Us</a
-      >
-      <a
         href="#quiz-area"
         class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-b border-gray-600"
-        >Quiz</a
+        >Assessment</a
       >
       <a
         href="#password-generator"
         class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-b border-gray-600"
-        >Generator</a
+        >Password Creator</a
+      >
+      <a
+        href="#about"
+        class="w-full py-2 px-5 hover:bg-gray-500 transition-colors border-b border-gray-600"
+        >About Us</a
       >
       <a
         href="#contact"
@@ -135,32 +155,36 @@
       >
     </nav>
 
-    <section id="banner" class="py-3 w-full h-screen">
+    <!-- Banner Area -->
+    <section
+      id="banner"
+      class="py-12 w-full min-h-screen flex justify-center items-center"
+    >
       <div
         class="container h-full mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-5"
       >
         <div class="md:w-1/2">
           <img src="assets/img/banner.svg" alt="" class="max-h-full" />
         </div>
-        <div class="md:w-1/2 text-center md:text-left text-white">
+        <div class="md:w-1/2 text-center md:text-left">
           <h1
-            class="text-2xl text-center md:text-left md:text-4xl xl:text-6xl font-bold font-[Raleway] mb-5"
+            class="text-2xl text-center md:text-left md:text-4xl xl:text-6xl font-bold font-raleway mb-5"
           >
             Welcome to Our
-            <span class="text-red-300">Creative Collective</span>
+            <span class="text-blazeRed">Creative Collective</span>
             <span
-              class="block text-base md:text-xl xl:text-3xl font-semibold text-[#ffffffd4] w-full"
+              class="block text-base md:text-xl xl:text-3xl font-semibold text-blueAnchor w-full"
             >
               — where ideas spark, passions unite, and innovation takes
               flight.</span
             >
           </h1>
-          <p class="md:text-base xl:text-xl text-[#b0c9ef]">
+          <p class="md:text-base xl:text-xl text-aquaMist">
             Together, we imagine beyond limits and create without compromise.
           </p>
           <a
             href="#main-content"
-            class="bg-indigo-400 px-6 md:px-8 py-3 rounded-md hover:bg-indigo-600 transition-all cursor-pointer mt-4 md:mt-7 shadow-md font-semibold inline-block"
+            class="bg-blueAnchor border-2 border-blueAnchor px-6 md:px-8 py-3 rounded-md hover:bg-transparent transition-all cursor-pointer mt-4 md:mt-7 shadow-md font-semibold inline-block"
           >
             Explore More
           </a>
@@ -171,19 +195,16 @@
     <!-- Main Content -->
     <main id="main-content">
       <!-- Conduct Area -->
-      <section id="conduct" class="py-12 bg-[#5375d242]">
+      <section
+        id="conduct"
+        class="py-12 bg-gradient-to-bl from-blueAnchor from-40% to-aquaMist"
+      >
         <div class="container mx-auto px-4 py-2">
           <div class="heading py-2 my-3">
-            <h2
-              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
-            >
-              Code of Conduct
-            </h2>
+            <h2 class="title-txt">Code of Conduct</h2>
           </div>
           <div class="flex flex-wrap justify-evenly items-stretch gap-4 p-2">
-            <div
-              class="conduct-item p-4 rounded-md border-indigo-200 border w-full md:w-[345px] shadow-sm shadow-sky-300 bg-indigo-400"
-            >
+            <div class="conduct-item">
               <h3 class="text-base md:text-xl font-semibold mb-3">
                 Ethics and Professionalism
               </h3>
@@ -196,9 +217,7 @@
                 finer details that employees need to know about your company.
               </p>
             </div>
-            <div
-              class="conduct-item p-4 rounded-md border-indigo-200 border w-full md:w-[345px] shadow-sm shadow-sky-300 bg-indigo-400"
-            >
+            <div class="conduct-item">
               <h3 class="text-base md:text-xl font-semibold mb-3">
                 Confidentiality
               </h3>
@@ -211,9 +230,7 @@
                 finer details that employees need to know about your company.
               </p>
             </div>
-            <div
-              class="conduct-item p-4 rounded-md border-indigo-200 border w-full md:w-[345px] shadow-sm shadow-sky-300 bg-indigo-400"
-            >
+            <div class="conduct-item">
               <h3 class="text-base md:text-xl font-semibold mb-3">
                 Safety and Security
               </h3>
@@ -235,14 +252,8 @@
         <div class="container mx-auto px-4">
           <!-- Quiz Heading Area -->
           <div class="heading py-2 my-3">
-            <h2
-              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
-            >
-              Test Your Knowledge!
-            </h2>
-            <p class="text-center mt-3 text-white opacity-70 font-normal">
-              Adds a sense of excitement
-            </p>
+            <h2 class="title-txt">Test Your Knowledge!</h2>
+            <p class="sub-title-txt">Adds a sense of excitement</p>
           </div>
 
           <!-- Quiz Content Area -->
@@ -251,20 +262,14 @@
           >
             <!-- Quiz Left Area -->
             <div
-              class="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 flex justify-center items-center"
+              class="bg-blueAnchor text-aquaMist p-6 rounded-lg shadow-lg w-full md:w-1/2 flex justify-center items-center"
             >
               <!-- Start Screen -->
               <div id="start-screen" class="block text-center w-full">
-                <h1
-                  class="text-xl md:text-2xl font-semibold mb-4 font-[Raleway]"
-                >
+                <h1 class="text-xl md:text-2xl font-semibold mb-4 font-raleway">
                   Ready to flex those brain cells?
                 </h1>
-                <button
-                  type="button"
-                  onclick="startQuiz()"
-                  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition cursor-pointer"
-                >
+                <button type="button" onclick="startQuiz()" class="quiz-btn">
                   Jump In
                 </button>
               </div>
@@ -273,16 +278,16 @@
               <div id="quiz" class="hidden w-full">
                 <h2
                   id="question"
-                  class="text-lg font-medium mb-4 text-center font-[Raleway]"
+                  class="text-lg font-medium mb-4 text-center font-raleway"
                 ></h2>
-                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                <div class="flex justify-between text-sm mb-2">
                   <div id="question-count">Question 1 of X</div>
                   <div id="score-indicator">Score: 0</div>
                 </div>
                 <div id="choices" class="flex flex-col gap-2 mb-4"></div>
 
                 <!-- Progress Bar + Inline Score -->
-                <div class="w-full bg-gray-200 h-2 rounded mt-4">
+                <div class="w-full bg-midnightNavy h-2 rounded mt-4">
                   <div
                     id="progress-bar"
                     class="bg-blue-500 h-2 rounded transition-all duration-300"
@@ -293,11 +298,7 @@
 
               <!-- Restart Screen -->
               <div id="restart-screen" class="hidden text-center w-full">
-                <button
-                  type="button"
-                  onclick="restartQuiz()"
-                  class="bg-green-500 text-white px-4 py-2 mt-4 rounded hover:bg-green-600 transition cursor-pointer"
-                >
+                <button type="button" onclick="restartQuiz()" class="quiz-btn">
                   Restart Quiz
                 </button>
               </div>
@@ -312,23 +313,17 @@
       </section>
 
       <!-- Password Generator Area -->
-      <section id="password-generator" class="py-12 bg-gray-800">
+      <section id="password-generator" class="py-12 bg-aquaMist">
         <div class="container mx-auto px-4">
           <!-- Quiz Heading Area -->
           <div class="heading py-2 my-3">
-            <h2
-              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
-            >
-              Secure Your Access
-            </h2>
-            <p class="text-center mt-3 text-white opacity-70 font-normal">
-              Fortify your privacy in seconds
-            </p>
+            <h2 class="title-txt !text-blazeRed">Secure Your Access</h2>
+            <p class="sub-title-txt">Fortify your privacy in seconds</p>
           </div>
 
           <!-- Bottom Area -->
           <div
-            class="flex flex-col md:flex-row justify-center items-center md:space-x-4"
+            class="flex flex-col md:flex-row justify-center items-stretch md:space-x-4"
           >
             <!-- Left Side -->
             <div class="md:w-1/2 w-full">
@@ -341,17 +336,15 @@
 
             <!-- Right Side -->
             <div
-              class="text-white md:w-1/2 w-full bg-indigo-500 p-5 rounded-md md"
+              class="text-white md:w-1/2 w-full bg-midnightNavy p-5 rounded-md md flex justify-center items-center flex-col space-y-7"
             >
-              <h1 class="text-center text-lg md:text-xl mb-3">
-                Password Generator
-              </h1>
+              <h1 class="text-center text-lg md:text-xl">Password Generator</h1>
               <div
-                class="in_out flex space-x-3 justify-center items-center mb-3 w-full"
+                class="in_out flex space-x-3 justify-center mb-0 items-center w-full"
               >
                 <input
                   id="input-len"
-                  class="outline-0 border border-indigo-300 text-sm py-2 px-3 text-center w-1/4"
+                  class="outline-0 border border-blueAnchor text-sm py-2 px-3 text-center w-1/4"
                   min="8"
                   max="32"
                   type="number"
@@ -360,16 +353,17 @@
                 />
                 <input
                   id="output-pass"
-                  class="outline-0 border border-indigo-300 py-2 px-3 text-center text-sm w-3/4"
+                  class="outline-0 border border-blueAnchor py-2 px-3 text-center text-sm w-3/4"
                   type="text"
                   placeholder="Generated Password"
                   readonly
                 />
               </div>
+              <p id="danger-message" class="text-blazeRed text-xs mr-auto"></p>
               <button
                 type="button"
                 onclick="passBtn()"
-                class="w-fit block mx-auto py-2 px-8 bg-blue-700 hover:bg-blue-600 transition-colors rounded-md cursor-pointer"
+                class="w-fit block mx-auto py-2 px-8 bg-blueAnchor border-2 border-blueAnchor hover:bg-transparent transition-colors rounded-md cursor-pointer"
               >
                 Generate
               </button>
@@ -384,12 +378,8 @@
           class="container mx-auto px-4 h-full flex justify-center items-center flex-col"
         >
           <div class="heading py-2 my-3">
-            <h2
-              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
-            >
-              Who We Are
-            </h2>
-            <p class="text-center mt-3 text-white opacity-70 font-normal">
+            <h2 class="title-txt">Who We Are</h2>
+            <p class="sub-title-txt">
               At teamRED, we’re more than creators—we’re collaborators,
               visionaries, and problem-solvers.
             </p>
@@ -406,9 +396,9 @@
                     class="bg-[url(../assets/img/rakibul-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
                   >
                     <div
-                      class="avatar-info absolute flex flex-col justify-end w-full h-full left-0 -bottom-32 opacity-0 duration-300 transition-all text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full left-0 -bottom-32 opacity-0 duration-300 transition-all text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
                     >
-                      <h3 class="text-lg font-[Raleway] font-semibold">
+                      <h3 class="text-lg font-raleway font-semibold">
                         Md. Rakibul Islam
                       </h3>
                       <span class="text-xs">Frontend Developer</span>
@@ -459,9 +449,9 @@
                     class="bg-[url(../assets/img/rokib-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
                   >
                     <div
-                      class="avatar-info absolute flex flex-col justify-end w-full h-full left-0 -bottom-32 opacity-0 duration-300 transition-all text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full left-0 -bottom-32 opacity-0 duration-300 transition-all text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
                     >
-                      <h3 class="text-lg font-[Raleway] font-semibold">
+                      <h3 class="text-lg font-raleway font-semibold">
                         Nafiul Islam Rokib
                       </h3>
                       <span class="text-xs">Frontend Developer</span>
@@ -512,9 +502,9 @@
                     class="bg-[url(../assets/img/maidul-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
                   >
                     <div
-                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 transition-all opacity-0 left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 transition-all opacity-0 left-0 duration-300 text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
                     >
-                      <h3 class="text-lg font-[Raleway] font-semibold">
+                      <h3 class="text-lg font-raleway font-semibold">
                         Md. Maidul Islam
                       </h3>
                       <span class="text-xs">Frontend Developer</span>
@@ -565,9 +555,9 @@
                     class="bg-[url(../assets/img/nazmul-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
                   >
                     <div
-                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 -bottom-32 left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 -bottom-32 left-0 duration-300 text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
                     >
-                      <h3 class="text-lg font-[Raleway] font-semibold">
+                      <h3 class="text-lg font-raleway font-semibold">
                         Md. Nazmul Islam
                       </h3>
                       <span class="text-xs">Frontend Developer</span>
@@ -618,9 +608,9 @@
                     class="bg-[url(../assets/img/hamim-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
                   >
                     <div
-                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 transition-all -bottom-32 left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 transition-all -bottom-32 left-0 duration-300 text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
                     >
-                      <h3 class="text-lg font-[Raleway] font-semibold">
+                      <h3 class="text-lg font-raleway font-semibold">
                         Md. Habibur Rahman
                       </h3>
                       <span class="text-xs">Frontend Developer</span>
@@ -671,9 +661,9 @@
                     class="bg-[url(../assets/img/sajjad-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
                   >
                     <div
-                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 transition-all -bottom-32 left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full opacity-0 transition-all -bottom-32 left-0 duration-300 text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
                     >
-                      <h3 class="text-lg font-[Raleway] font-semibold">
+                      <h3 class="text-lg font-raleway font-semibold">
                         Sajjad Ahamed Sojib
                       </h3>
                       <span class="text-xs">Frontend Developer</span>
@@ -724,9 +714,9 @@
                     class="bg-[url(../assets/img/mahadi-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
                   >
                     <div
-                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 opacity-0 transition-all left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 opacity-0 transition-all left-0 duration-300 text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
                     >
-                      <h3 class="text-lg font-[Raleway] font-semibold">
+                      <h3 class="text-lg font-raleway font-semibold">
                         Mahadi Hasan
                       </h3>
                       <span class="text-xs">Frontend Developer</span>
@@ -777,9 +767,9 @@
                     class="bg-[url(../assets/img/mejba-avatar.png)] bg-no-repeat bg-center w-full h-full relative overflow-hidden"
                   >
                     <div
-                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 opacity-0 transition-all left-0 duration-300 text-white text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
+                      class="avatar-info absolute flex flex-col justify-end w-full h-full -bottom-32 opacity-0 transition-all left-0 duration-300 text-center p-3 bg-gradient-to-b from-[#00000010] to-[#000000]"
                     >
-                      <h3 class="text-lg font-[Raleway] font-semibold">
+                      <h3 class="text-lg font-raleway font-semibold">
                         Mejbaul Hauqe Mejba
                       </h3>
                       <span class="text-xs">Frontend Developer</span>
@@ -787,7 +777,7 @@
                         class="flex justify-center items-center gap-3 mt-3 text-sm"
                       >
                         <a
-                          href="https://www.facebook.com/mahadihasanmithil05"
+                          href="https://www.facebook.com/mhm.mejba"
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Social Icon"
@@ -830,28 +820,24 @@
       </section>
 
       <!-- Contact Area -->
-      <section id="contact" class="py-12 bg-purple-400">
+      <section id="contact" class="py-12 bg-[#264653]">
         <div
           class="container mx-auto px-4 flex flex-col justify-center items-center w-full"
         >
           <div class="heading py-2 my-3 hidden sm:block">
-            <h2
-              class="text-xl md:text-3xl pb-2 font-semibold font-[Raleway] border-b-3 border-red-300 w-fit mx-auto text-amber-300"
-            >
-              Request Assistance
-            </h2>
+            <h2 class="title-txt">Request Assistance</h2>
           </div>
           <div
-            class="flex flex-col-reverse lg:flex-row justify-between items-center gap-5 my-7 w-full"
+            class="flex flex-col-reverse lg:flex-row justify-between items-center lg:gap-5 my-7 w-full"
           >
-            <div class="lg:w-1/2 w-full p-3">
+            <div class="lg:w-1/2 w-full lg:p-3">
               <form
                 action=""
-                class="flex flex-col space-y-3 p-10 rounded-md bg-indigo-200"
+                class="flex flex-col space-y-3 p-10 rounded-md bg-blueAnchor lg:bg-transparent"
               >
                 <div class="py-2 text-center">
                   <h3
-                    class="font-[Raleway] font-semibold text-lg md:text-xl md:placeholder:text-sm"
+                    class="font-raleway font-semibold text-lg md:text-xl md:placeholder:text-sm"
                   >
                     How Can We Reach You?
                   </h3>
@@ -863,14 +849,14 @@
                     name="name"
                     id="name"
                     placeholder="What Should We Call You?"
-                    class="py-2 px-3 outline-0 border-stone-400 focus:border-indigo-400 border rounded-md placeholder:text-xs md:placeholder:text-sm"
+                    class="py-2 px-3 outline-0 border-aquaMist focus:border-midnightNavy border rounded-md placeholder:text-xs md:placeholder:text-sm"
                     required
                   />
                 </div>
                 <div class="flex flex-col space-y-1">
                   <label for="email" class="text-base">Email</label>
                   <input
-                    class="py-2 px-3 outline-0 border-stone-400 focus:border-indigo-400 border rounded-md placeholder:text-xs md:placeholder:text-sm"
+                    class="py-2 px-3 outline-0 border-aquaMist focus:border-midnightNavy border rounded-md placeholder:text-xs md:placeholder:text-sm"
                     type="email"
                     name="email"
                     id="email"
@@ -881,7 +867,7 @@
                 <div class="flex flex-col space-y-1">
                   <label for="number" class="text-base">Number</label>
                   <input
-                    class="py-2 px-3 outline-0 border-stone-400 focus:border-indigo-400 border rounded-md placeholder:text-xs md:placeholder:text-sm"
+                    class="py-2 px-3 outline-0 border-aquaMist focus:border-midnightNavy border rounded-md placeholder:text-xs md:placeholder:text-sm"
                     type="number"
                     name="number"
                     id="number"
@@ -892,7 +878,7 @@
                 <div class="flex flex-col space-y-1">
                   <label for="message" class="text-base">Message</label>
                   <textarea
-                    class="py-2 px-3 outline-0 border-stone-400 focus:border-indigo-400 border rounded-md placeholder:text-xs md:placeholder:text-sm"
+                    class="py-2 px-3 outline-0 border-aquaMist focus:border-midnightNavy border rounded-md placeholder:text-xs md:placeholder:text-sm"
                     name="message"
                     id="message"
                     placeholder="Drop a Line"
@@ -901,7 +887,7 @@
                 </div>
                 <button
                   type="submit"
-                  class="cursor-pointer bg-blue-600 text-white hover:bg-blue-500 transition-all rounded-md p-2 font-semibold text-base"
+                  class="cursor-pointer bg-midnightNavy hover:bg-[#1d3557bf] transition-all rounded-md p-2 font-semibold text-base"
                   required
                 >
                   Proceed
@@ -921,9 +907,9 @@
     </main>
 
     <!-- Footer Area -->
-    <footer id="footer" class="py-4 bg-gray-700">
+    <footer id="footer" class="py-4">
       <div class="text-center">
-        <span class="text-stone-300"
+        <span class="opacity-70"
           >©All rights reserved by
           <em class="cursor-default hover:underline">teamRED</em></span
         >
