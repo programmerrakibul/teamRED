@@ -155,7 +155,7 @@ function loadQuestion() {
       "afterbegin",
       `
       <h2 class='text-xl md:text-2xl text-center mb-2 font-raleway font-semibold'>🎉Assessment Completed!</h2>
-      <p class="text-center text-lg text-polarWhite Your Score: ${score}/${questions.length}</p>
+      <p class="text-center text-lg text-polarWhite"> Your Score: ${score}/${questions.length}</p>
     `
     );
     return;
