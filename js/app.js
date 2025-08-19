@@ -233,6 +233,7 @@ const inputPass = document.querySelector("#input-len");
 let dangerMessage = document.querySelector("#danger-message");
 
 function genPassword(length) {
+  length = parseInt(length);
   const chartSet = lowerCase + upperCase + symbols + numbers;
   let pass = "";
   for (let i = 0; i < length; i++) {
@@ -253,5 +254,6 @@ function passBtn() {
     dangerMessage.textContent = "";
     dangerMessage.style.display = "block";
     outputPass.value = genPassword(inputPass.value);
+    inputPass.value = "";
   }
 }
