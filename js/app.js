@@ -243,11 +243,15 @@ function genPassword(length) {
 }
 
 function passBtn() {
-  if (inputPass.value < 8) {
+  if (inputPass.value <= 0) {
+    dangerMessage.textContent = "Enter a valid password length";
+  } else if (inputPass.value < 8) {
     dangerMessage.textContent = "Your password length must be greater than 7";
   } else if (inputPass.value > 32) {
     dangerMessage.textContent = "Your password length must be less than 33";
   } else {
+    dangerMessage.textContent = "";
+    dangerMessage.style.display = "block";
     outputPass.value = genPassword(inputPass.value);
   }
 }
